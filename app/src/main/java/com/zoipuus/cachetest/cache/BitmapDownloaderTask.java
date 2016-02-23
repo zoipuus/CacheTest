@@ -6,8 +6,6 @@ import android.net.http.AndroidHttpClient;
 import android.os.AsyncTask;
 import android.widget.ImageView;
 
-import com.zoipuus.cachetest.LogUtils;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -24,7 +22,6 @@ import java.io.InputStream;
  * download image
  */
 public class BitmapDownloaderTask extends AsyncTask<Object, Void, Bitmap> {
-    private static final String TAG = "CacheTest";
     String url;
     ImageView imageView;
 
@@ -38,11 +35,9 @@ public class BitmapDownloaderTask extends AsyncTask<Object, Void, Bitmap> {
     @Override
     protected void onPostExecute(Bitmap bitmap) {
         if (bitmap == null) {
-            LogUtils.e("bitmap is null");
             return;
         }
 //        adapter.notifyDataSetChanged();// 触发getView方法执行，这个时候getView实际上会拿到刚刚缓存好的图片
-        LogUtils.e("ImageView set bitmap");
         BitmapFileCacheUtils.getInstance().saveBitmap(bitmap, url);
         imageView.setImageBitmap(bitmap);
     }
@@ -61,7 +56,6 @@ public class BitmapDownloaderTask extends AsyncTask<Object, Void, Bitmap> {
             response = client.execute(httpGet);
             int stateCode = response.getStatusLine().getStatusCode();
             if (stateCode != HttpStatus.SC_OK) {
-                LogUtils.d("func [loadImage] stateCode=" + stateCode);
                 return null;
             }
             HttpEntity entity = response.getEntity();

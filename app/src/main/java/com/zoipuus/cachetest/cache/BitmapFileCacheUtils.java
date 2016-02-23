@@ -97,10 +97,8 @@ public class BitmapFileCacheUtils {
             sdDir = Environment.getDownloadCacheDirectory();
         }
         if (sdDir != null) {
-            LogUtils.e("path->" + sdDir);
             return sdDir.toString();
         } else {
-            LogUtils.e("no SD card");
             return "";
         }
     }
@@ -138,20 +136,13 @@ public class BitmapFileCacheUtils {
             dirFile.mkdirs();
         }
         File file = new File(dir + "/" + fileName);
-        LogUtils.e("fileName" + file.toString());
         try {
             file.createNewFile();
-            LogUtils.e("createNewFile");
             OutputStream outputStream = new FileOutputStream(file);
-            LogUtils.e("new outputStream");
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
-            LogUtils.e("compress");
             outputStream.flush();
-            LogUtils.e("flush()");
             outputStream.close();
-            LogUtils.e("close()");
         } catch (IOException e) {
-            LogUtils.e("create file failed");
             e.printStackTrace();
         }
     }
@@ -164,7 +155,6 @@ public class BitmapFileCacheUtils {
     private int freeSpaceOnSd() {
         StatFs statFs = new StatFs(Environment.getExternalStorageDirectory().getPath());
         double sdFreeMB = ((double) statFs.getAvailableBlocks() * (double) statFs.getBlockSize()) / MB;
-        LogUtils.e("剩余空间为：" + sdFreeMB);
         return (int) sdFreeMB;
     }
 
