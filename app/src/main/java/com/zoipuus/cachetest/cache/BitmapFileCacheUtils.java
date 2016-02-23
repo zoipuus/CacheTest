@@ -24,8 +24,8 @@ public class BitmapFileCacheUtils {
     private static final String CACHE_DIR = "BitmapCache";//缓存目录
     private static final String WHOLESALE_CONV = ".cache";//缓存文件后缀名
     private static final int MB = 1024 * 1024;
-    private static final int CACHE_SIZE = 10;//缓存最大容量（超过就会利用lru算法删除最近最少使用的缓存文件）
-    private static final int FREE_SD_SPACE_NEEDED_TO_CACHE = 15;//缓存所需SD卡所剩的最小容量
+    private static final int CACHE_SIZE = 5;//缓存最大容量（超过就会利用lru算法删除最近最少使用的缓存文件）
+    private static final int FREE_SD_SPACE_NEEDED_TO_CACHE = 10;//缓存所需SD卡所剩的最小容量
 
     private static BitmapFileCacheUtils instance = null;
 
