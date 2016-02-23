@@ -7,10 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
-import android.widget.ImageView;
 import android.widget.ListView;
-
-import com.zoipuus.cachetest.cache.BitmapFileCacheUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
         adapter = new MyAdapter(500, this);
         mListView.setAdapter(adapter);
         mListView.setOnScrollListener(mScrollListener);
-        ImageView imageView = (ImageView) findViewById(R.id.image);
-        BitmapFileCacheUtils.getInstance().display(imageView, "http://avatar.csdn.net/E/3/5/1_hqocshheqing.jpg");
     }
 
     OnScrollListener mScrollListener = new OnScrollListener() {
