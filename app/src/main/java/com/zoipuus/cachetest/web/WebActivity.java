@@ -3,7 +3,6 @@ package com.zoipuus.cachetest.web;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebChromeClient;
@@ -11,6 +10,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.zoipuus.cachetest.LogUtils;
 import com.zoipuus.cachetest.R;
@@ -29,8 +29,7 @@ public class WebActivity extends Activity implements View.OnClickListener {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Toast.makeText(WebActivity.this, "Replace with your own action", Toast.LENGTH_SHORT).show();
             }
         });
 
