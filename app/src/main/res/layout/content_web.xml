@@ -8,9 +8,33 @@
     tools:context="com.zoipuus.cachetest.web.WebActivity"
     tools:showIn="@layout/activity_web">
 
+    <LinearLayout
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:background="@android:color/transparent"
+            android:inputType="textUri"
+            android:padding="5dp" />
+
+        <Button
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="search" />
+    </LinearLayout>
+
     <WebView
         android:id="@+id/web"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@+id/search_bar" />
 
 </RelativeLayout>
