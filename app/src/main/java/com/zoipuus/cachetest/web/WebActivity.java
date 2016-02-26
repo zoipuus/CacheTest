@@ -42,8 +42,8 @@ public class WebActivity extends Activity implements View.OnClickListener {
         webView = (WebView) findViewById(R.id.web);
         WebSettings webSetting = webView.getSettings();
         //setting cache mode
-        webSetting.setAppCacheEnabled(true);
-        webSetting.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+//        webSetting.setAppCacheEnabled(true);
+//        webSetting.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
 //        String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/gefdemoweb";
 //        webSetting.setAppCachePath(path);
 
