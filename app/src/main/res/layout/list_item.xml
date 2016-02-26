@@ -17,6 +17,6 @@
         android:layout_alignBottom="@id/iv_image"
         android:textSize="15sp"
         android:layout_toRightOf="@id/iv_image"
-        android:text="xxxxxx" />
+        android:layout_toEndOf="@id/iv_image" />
 
 </RelativeLayout>
